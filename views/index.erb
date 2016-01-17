@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title><%= @title || "Products By Sinatra" %></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<form action="/" method="post">
+			Search:<input type="text" name="search" id="Search"/>
+			<input type="submit" value="submit" name="Submit">
+		</form>
+	</header>
+	<section>
+		<a href=<%= @link|| "/" %>><img src=<%= @image || "http://img1a.flixcart.com/img/thumb-default.jpg" %>/></a>
+		<p><%= @productName %><br/><%= @price %></p>
+	</section>
+</body>
+</html>

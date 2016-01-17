@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<title>multiscroll.js - split multi-scrolling pages plugin</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="multiscroll plugin by Alvaro Trigo. Create divided multi-scrolling pages with two splited vertical layouts or panels." />
+	<meta name="keywords"  content="multiscroll,jquery,alvaro,trigo,plugin,divided,splitscreen,screen,panels,layouts,vertical,split,splited" />
+	<meta name="Resource-type" content="Document" />
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/jquery.multiscroll.css" />		
+	<link rel="stylesheet" type="text/css" href="css/examples.css" />		
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easings.min.js"></script>
+	<script type="text/javascript" src="js/jquery.multiscroll.js"></script>
+
+	<script type="text/javascript">
+	 $(document).ready(function() {
+            $('#myContainer').multiscroll({
+            	sectionsColor: ['#DE564B', '#EAE1C0', '#EAE1C0'],
+            	anchors: ['first', 'second', 'third'],
+            	menu: '#menu',
+            	css3: true,
+            	paddingTop: '70px',
+            	paddingBottom: '70px'
+            });
+        });
+    </script>
+
+
+    <style>
+    h1{
+    	color: #fff;
+    }
+    
+	/* Fixed header and footer.
+	* --------------------------------------- */
+	#header, #footer{
+		position:fixed;
+		height: 60px;
+		display:block;
+		width: 100%;
+		background: #2B3856;
+		z-index:9;
+		text-align:center;
+		color: #f2f2f2;
+		padding: 20px 0 0 0;
+	}
+	
+	#header{
+		top:0px;
+	}
+	#footer{
+		bottom:0px;
+	}
+
+	</style>
+</head>
+<body>
+
+
+	<div id="header">
+		<div class="col-lg-5" style="margin-top:-13px;margin-left:-30px;margin-right:30px;padding-right:30px"><img src="images/logo.PNG"></div>
+		<div class="col-lg-6" style="margin-top:-5px">
+			<form action="/" method="post">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Enter something you want to buy.. e.g. iPhone" name="search" id="Search" />
+      				<span class="input-group-btn">
+        				<button class="btn btn-default" type="submit" id="clickBtn" name="submit">Search <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      				</span>
+    			</div>
+    		</form>
+    	</div>
+    	<div class="col-lg-1"></div>
+	</div>
+
+<!--
+<ul id="menu">
+	<li data-menuanchor="first"><a href="#first">First slide</a></li>
+	<li data-menuanchor="second"><a href="#second">Second slide</a></li>
+	<li data-menuanchor="third"><a href="#third">Third slide</a></li>
+</ul>
+-->
+<div id="myContainer">
+
+	<div class="ms-left">
+		<div class="ms-section" id="left1">
+			<h1>Left 1</h1>
+		</div>
+
+		<div class="ms-section" id="left2">
+			<h1><a href=<%= @link|| "/" %>><img src=<%= @image || "http://img1a.flixcart.com/img/thumb-default.jpg" %>/></a></h1>
+			<br/>
+			<h2 style="font-size:30px"><%= @productName %><br/><%= @price %></h2>
+		</div>
+	</div>
+	
+	<div class="ms-right">
+		<div class="ms-section" id="right1">
+			<h1>Right 1</h1>
+		</div>
+
+		<div class="ms-section" id="right2">
+			<h1>Right 2</h1>
+		</div>
+	</div>	
+</div>
+
+</body>
+</html>
