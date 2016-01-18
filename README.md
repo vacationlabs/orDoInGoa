@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # multiScroll.js
 
 ![preview](https://raw.github.com/alvarotrigo/multiScroll.js/master/examples/imgs/multiscroll.png)
@@ -390,3 +391,7 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+=======
+# orDoInGoa
+Web app to suggest cheeky things that you can buy(unique to Goa) with the same amount as any other product on an e-commerce site (Flipkart)
+>>>>>>> 4fd91d55dfc94bdaa21c0dfa73f22d09996e8b38
