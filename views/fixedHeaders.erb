@@ -3,16 +3,16 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
-	<title>multiscroll.js - split multi-scrolling pages plugin</title>
-	<meta name="author" content="Alvaro Trigo Lopez" />
-	<meta name="description" content="multiscroll plugin by Alvaro Trigo. Create divided multi-scrolling pages with two splited vertical layouts or panels." />
+	<title>Or Do This in Goa</title>
+	<link rel="shortcut icon" href="images/drinks.png" type="image/x-icon" />
+	<meta name="author" content="Vac Lab" />
 	<meta name="keywords"  content="multiscroll,jquery,alvaro,trigo,plugin,divided,splitscreen,screen,panels,layouts,vertical,split,splited" />
 	<meta name="Resource-type" content="Document" />
-
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/jquery.multiscroll.css" />		
 	<link rel="stylesheet" type="text/css" href="css/examples.css" />		
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.easings.min.js"></script>
 	<script type="text/javascript" src="js/jquery.multiscroll.js"></script>
@@ -21,20 +21,45 @@
 	<script type="text/javascript">
 	 $(document).ready(function() {
             $('#myContainer').multiscroll({
-            	sectionsColor: ['#DE564B', '#EAE1C0', '#EAE1C0'],
+            	sectionsColor: ['#DE564B', '#DE564B', '#EAE1C0'],
             	anchors: ['first', 'second', 'third'],
             	menu: '#menu',
             	css3: true,
             	paddingTop: '70px',
             	paddingBottom: '70px'
             });
+
+            if(document.getElementById("hiddenVal").value == "1"){
+            	$('#leftContent1').slideUp(800);
+            	$.fn.multiscroll.moveSectionDown();
+            	document.getElementById("hiddenVal").value = "0"
+            } else {
+            	$.fn.multiscroll.moveSectionUp();
+            	$('#leftContent1').slideDown(800);
+            }
         });
     </script>
 
 
     <style>
+    body{
+    	font-family: 'Ubuntu', serif;
+    	color:#ffffff;
+    }
     h1{
     	color: #fff;
+    	text-align: center;
+    	font-size:75px;
+    }
+
+    h2{
+    	font-size:60px;
+    	color: #f0f0f0;
+    }
+
+    h3{
+    	font-size:50px;
+    	color: #ffffff;
     }
     
 	/* Fixed header and footer.
@@ -47,10 +72,46 @@
 		background: #2B3856;
 		z-index:9;
 		text-align:center;
-		color: #f2f2f2;
+		color: #ffffff;
 		padding: 20px 0 0 0;
 	}
+
+	.left{
+		color:#ffffff;
+		margin-right:-100px;
+		padding-left:150px;
+	}
+
+	.right{
+		color:#ffffff;
+		margin-left:-10px;
+		padding-right:200px;
+	}
+
+	.boxJumbo {
+		/*padding: 30px 15px;*/
+		margin-left: 35px;
+		margin-top: 20px;
+  		margin-bottom: 30px;
+  		margin-right: 35px;
+		padding-top: 30px;
+		padding-bottom: 15px;
+		color: inherit;
+  		background-color: #eee;
+  		border-radius: 6px;
+  		background-color: #2B3856;
+	}
 	
+	#leftContent1 {
+		position: absolute;
+		margin-top: 200px;
+		margin-left:-30px;
+		/*margin-left: 160px;*/
+		z-index: 1;
+		color: #e0e0e0;
+		text-align: center;
+	}
+
 	#header{
 		top:0px;
 	}
@@ -61,16 +122,15 @@
 	</style>
 </head>
 <body>
-
-
 	<div id="header">
-		<div class="col-lg-5" style="margin-top:-13px;margin-left:-30px;margin-right:30px;padding-right:30px"><img src="images/logo.PNG"></div>
-		<div class="col-lg-6" style="margin-top:-5px">
+		<div class="col-lg-4" style="margin-top:-8px;margin-right:30px;padding-right:30px"><a href="/"><img src="images/title.png" height="35px" width="400px"/></a></div>
+		<div class="col-lg-2"></div>
+		<div class="col-lg-5" style="margin-top:-5px;">
 			<form action="/" method="post">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Enter something you want to buy.. e.g. iPhone" name="search" id="Search" />
+					<input type="text" class="form-control" placeholder="Enter something you want to buy.. e.g. iPhone" name="search" id="Search" autofocus />
       				<span class="input-group-btn">
-        				<button class="btn btn-default" type="submit" id="clickBtn" name="submit" onSubmit='$.fn.multiscroll.moveSectionDown();'>Search <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        				<button class="btn btn-default" type="submit" id="clickBtn" name="submit"><img src="images/search.png" height="15px"/> Search</button>
       				</span>
     			</div>
     		</form>
@@ -86,30 +146,60 @@
 </ul>
 -->
 <div id="myContainer">
+	
+	<div id="leftContent1">
+		<div class="col-lg-2"><img src="images/lines.png"></div>
+		<div class="col-lg-8">
+			<h2>You can do so much in Goa</h2>
+			<p>for the same amount of money you spend thoughtlessly on</p>
+			<h1>MEANINGLESS GADGETS</h1>
+		</div>
+		<div class="col-lg-2"><img src="images/lines.png"></div>
+		<img src="images/arrows.png" width="50%"/>
+		<h3>Find out what you're missing!</h3>
+	</div>
 
 	<div class="ms-left">
 		<div class="ms-section" id="left1">
-			<h2 style="font-size:70px;color:#ffffff;margin-right:-10px;padding-left:150px">You can do so</h2>
-			<p>for the same amount of money </p>
-			<h1>MEANINGLESS</h1>
+			<input type="hidden" value=<%= @hideId %> id="hiddenVal">
 		</div>
-
 		<div class="ms-section" id="left2">
-			<h1><a href=<%= @link|| "/" %>><img src=<%= @image || "http://img1a.flixcart.com/img/thumb-default.jpg" %>/></a></h1>
-			<br/>
-			<h2 style="font-size:30px"><%= @productName %><br/><%= @price %></h2>
+			<div class="boxJumbo">
+				<h1><a href=<%= @link|| "/" %>><img src=<%= @image || "http://img1a.flixcart.com/img/thumb-default.jpg" %>/></a></h1>
+				<br/>
+				<h2 style="font-size:30px"><%= @productName %><br/><%= @price %></h2>
+			</div>
 		</div>
 	</div>
 	
 	<div class="ms-right">
 		<div class="ms-section" id="right1">
-			<h2 style="font-size:70px;color:#ffffff;margin-left:-10px;padding-right:200px">much in Goa</h2>
-			<p>you spend thoughtlessly on</p>
-			<h1> GADGETS</h1>
 		</div>
 
 		<div class="ms-section" id="right2">
-			<h1>Right 2</h1>
+			<div class="boxJumbo">
+				<% i = 0 %>
+				<% if @itemName.any? %>
+					<% @itemName.each do |elem| %>
+						<% if i>0 %>
+							<p style="color:#ffffff">+</p>
+						<% end %>
+						<% j = (@itemMul[i].to_i/@itemVal[i].to_i)+1 %>
+						<h1><% while j > 0 do %><img src=<%= "images/"+@itemImg[i] %> height="42px" style="padding-left=-15px"/><% j = j - 1 %><% end %></h1>
+						<p style="color:#ffffff">
+							<% if elem == "Beer" || elem == "Port Wine" || elem == "Feni" %>
+							<%= @itemMul[i] %> bottles of <%= elem %></p>
+							<% elsif elem == "Fish Thali" %>
+							<%= @itemMul[i] %> <%= elem %>s</p>
+							<% elsif elem == "Cashewnuts" %>
+							<%= @itemMul[i] %> kgs of <%= elem %></p>
+							<% elsif elem == "EDM Festival Pass" %>
+							<%= @itemMul[i] %> passes of <%= elem %></p>
+							<% end %>
+						<% i = i + 1 %>
+					<% end %>
+				<% end %>
+			</div>
 		</div>
 	</div>	
 </div>
