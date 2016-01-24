@@ -1,6 +1,8 @@
+require 'rubygems'
+require 'sinatra'
 require 'nokogiri'
 require 'open-uri'
-require 'sinatra'
+
 
 #ALGORITHM START
 #Global Variables
@@ -93,7 +95,7 @@ get '/' do
 end
 
 get '/alg' do
-	
+
 end
 
 #routes - post
@@ -107,7 +109,7 @@ post '/' do
 
 	url = "http://www.flipkart.com/search?q=" + product
 	doc = Nokogiri::HTML(open(url))
-	
+
 	# if the data is displayed in 4 per columns
 	if(doc.at_css(".unit-4") != nil)
 		#puts "unit 4"
@@ -180,7 +182,7 @@ post '/' do
 	@itemName = Array.new
 	@itemMul = Array.new
 	@itemVal = Array.new
-	@itemImg = Array.new	
+	@itemImg = Array.new
 	i = 0
 	j = 0
 
@@ -213,7 +215,7 @@ post '/' do
  #    	@altValue = value.to_s
  #    	@altImage = "images/" + key + ".png"
 	# end
-	
+
 	#redirect to("/")
 	erb :index
 end
