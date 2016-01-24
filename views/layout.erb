@@ -146,73 +146,8 @@
     	</div>
     	<div class="col-lg-1"></div>
 	</div>
-
-<!--
-<ul id="menu">
-	<li data-menuanchor="first"><a href="#first">First slide</a></li>
-	<li data-menuanchor="second"><a href="#second">Second slide</a></li>
-	<li data-menuanchor="third"><a href="#third">Third slide</a></li>
-</ul>
-
-<script type="text/javascript">
-	alert($(location).attr('href'));//alert current url
-</script>-->
-<div id="myContainer">
-	<div id="leftContent1">
-		<div class="col-lg-2"><img src="images/lines.png"></div>
-		<div class="col-lg-8">
-			<h2>You can do so much in Goa</h2>
-			<p>for the same amount of money you spend thoughtlessly on</p>
-			<h1>MEANINGLESS GADGETS</h1>
-		</div>
-		<div class="col-lg-2"><img src="images/lines.png"></div>
-		<img src="images/arrows.png" width="50%"/>
-		<h3>Find out what you're missing!</h3>
-	</div>
-
-	<div class="ms-left">
-		<div class="ms-section" id="left1">
-			<input type="hidden" value=<%= @hideId %> id="hiddenVal">
-		</div>
-		<div class="ms-section" id="left2">
-			<div class="boxJumbo">
-				<h1><a href=<%= @link|| "/" %>><img src=<%= @image || "http://img1a.flixcart.com/img/thumb-default.jpg" %>/></a></h1>
-				<br/>
-				<h2 style="font-size:30px"><%= @productName %><br/><%= @price %></h2>
-			</div>
-		</div>
-	</div>
-	
-	<div class="ms-right">
-		<div class="ms-section" id="right1">
-		</div>
-
-		<div class="ms-section" id="right2">
-			<div class="boxJumbo">
-				<% i = 0 %>
-				<% if @itemName.any? %>
-					<% @itemName.each do |elem| %>
-						<% if i>0 %>
-							<p style="color:#ffffff">+</p>
-						<% end %>
-						<% j = (@itemMul[i].to_i/@itemVal[i].to_i)+1 %>
-						<h1><% while j > 0 do %><img src=<%= "images/"+@itemImg[i] %> height="42px" style="padding-left=-15px"/><% j = j - 1 %><% end %></h1>
-						<p style="color:#ffffff">
-							<% if elem == "Beer" || elem == "Port Wine" || elem == "Feni" %>
-							<%= @itemMul[i] %> bottles of <%= elem %></p>
-							<% elsif elem == "Fish Thali" %>
-							<%= @itemMul[i] %> <%= elem %>s</p>
-							<% elsif elem == "Cashewnuts" %>
-							<%= @itemMul[i] %> kgs of <%= elem %></p>
-							<% elsif elem == "EDM Festival Pass" %>
-							<%= @itemMul[i] %> passes of <%= elem %></p>
-							<% end %>
-						<% i = i + 1 %>
-					<% end %>
-				<% end %>
-			</div>
-		</div>
-	</div>	
-</div>
+	<section>
+		<%= yield %>
+	</section>
 </body>
 </html>

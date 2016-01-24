@@ -89,7 +89,7 @@ get '/' do
 	@itemMul = Array.new
 	@itemVal = Array.new
 	@itemImg = Array.new
-	erb :fixedHeaders
+	erb :index
 end
 
 get '/alg' do
@@ -215,5 +215,5 @@ post '/' do
 	# end
 	
 	#redirect to("/")
-	erb :fixedHeaders
+	erb :index
 end
